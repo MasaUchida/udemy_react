@@ -1,13 +1,19 @@
 import React from 'react';
 
-function App() {
-  const dom = <h1 className="hoge">yes</h1>
-  const form = <input type="text" onChange={(e) => {console.log(e.target.value);}}></input>
+const Test = () => {
+  return(
+    <div>
+      <h1 className="hoge">yes</h1>
+      <input type="text" onChange={(e) => {console.log(e.target.value);}}></input>
+    </div>
+  );
+}
 
+const App = () => {
+  
   return (
     <div>
-      {form}
-      {dom}
+      <Test/>
       <h1>Hellow world!</h1>
     </div>
   );
