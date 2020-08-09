@@ -1,20 +1,30 @@
 import React from 'react';
 
-const Test = () => {
+const User = (props) => {
   return(
-    <div>
-      <h1 className="hoge">yes</h1>
-      <input type="text" onChange={(e) => {console.log(e.target.value);}}></input>
-    </div>
+  <div>
+    <p>名前：{props.name}</p>
+    <p>性別：{props.sex}</p>
+    <p>年齢：{props.age}</p>
+    <br/>
+  </div>
   );
 }
 
 const App = () => {
-  
-  return (
+  const profiles = [
+    {name: "太郎",sex: "男",age: 300},
+    {name: "次郎",sex: "男",age: 298},
+  ]
+
+  return(
     <div>
-      <Test/>
-      <h1>Hellow world!</h1>
+      <h1>User Plofiles</h1>
+      {
+        profiles.map((profile)=>{
+          return <User name={profile.name} sex={profile.sex} age={profile.age}/>
+        })
+      }
     </div>
   );
 }
