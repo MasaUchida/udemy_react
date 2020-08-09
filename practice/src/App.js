@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const User = (props) => {
   return(
@@ -11,6 +12,12 @@ const User = (props) => {
   );
 }
 
+User.propTypes = {
+  name: PropTypes.string,
+  sex: PropTypes.string,
+  age: PropTypes.number,
+}
+
 const App = () => {
   const profiles = [
     {name: "太郎",sex: "男",age: 300},
@@ -21,8 +28,8 @@ const App = () => {
     <div>
       <h1>User Plofiles</h1>
       {
-        profiles.map((profile)=>{
-          return <User name={profile.name} sex={profile.sex} age={profile.age}/>
+        profiles.map((profile,index)=>{
+          return <User name={profile.name} sex={profile.sex} age={profile.age} key={index}/>
         })
       }
     </div>
